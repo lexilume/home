@@ -1,4 +1,9 @@
 RewriteEngine on
+
+# Redirige 'home' a 'index.html'
+RewriteRule ^home$ /index.html [L]
+
+# Redirige cualquier solicitud a un archivo .html si no es un directorio
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html
+RewriteRule ^(.*)$ $1.html [L]
